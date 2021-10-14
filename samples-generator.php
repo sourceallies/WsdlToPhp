@@ -114,8 +114,8 @@ if(false)
  */
 if(true)
 {
-    $name = 'PayPal';
-    $wsdl = 'https://www.paypalobjects.com/wsdl/PayPalSvc.wsdl';
+    $name = 'AcumaticaSOAP';
+    $wsdl = 'https://acumatica.senecatank.com/(W(4))/Soap/UPDATESHPMTDATE.asmx?WSDL';
     exec('rm -rf ' . __DIR__ . '/samples/' . $name . '/*;');
     echo "\r\nStart at " . date('H:i:s');
     $w = new WsdlToPhpGenerator($wsdl);
@@ -126,7 +126,7 @@ if(true)
     WsdlToPhpGenerator::setOptionSubCategory(WsdlToPhpGenerator::OPT_SUB_CAT_END_NAME);
     WsdlToPhpGenerator::setOptionAddComments(array(
                                                     'date'=>date('Y-m-d'),
-                                                    'author'=>'Mikaël DELSOL',
+                                                    'author'=>'Team Slippers',
                                                     'version'=>1));
     echo "\r\nStart generation at " . date('H:i:s');
     $w->generateClasses($name,dirname(__FILE__) . '/samples/' . $name . '/');
